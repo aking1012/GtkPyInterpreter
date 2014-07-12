@@ -7,7 +7,7 @@ from gi.repository import GObject
 from gi.repository import Pango
 import os
 import sys
-import __builtin__
+import builtins
 import __main__
 
 
@@ -165,7 +165,7 @@ class CommandHistory(object):
       data = f.read()
       f.close()
       items = data.split('\n')
-      items = filter(lambda x: x.strip != '', items)
+      items = list(filter(lambda x: x.strip != '', items))
       self._cmds = items
       self._idx = len(self._cmds) - 1
     
@@ -222,7 +222,7 @@ class CommandCompleter(object):
     
   def _make_completer(self):
     l = {}
-    l.update(__builtin__.__dict__)
+    l.update(builtins.__dict__)
     l.update(locals())
     l.update(self._locals)
     self._completer = Completer(l)

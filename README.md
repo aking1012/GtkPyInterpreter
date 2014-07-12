@@ -5,6 +5,9 @@ Gtk.TextView. The implementation is pure Python and makes use of
 *GtkPyInterpreter* uses *Gtk3*, it heavily depends on GObject introspection
 (`PyGObject`).
 
+Forked the original project on github to make it work with python3.  They were minor edits
+really.  Didn't even try to fix the matplotlib part of the example, but the shell works.
+
 ## Features
 * input and output of the Python interpreter in Gtk.TextView widget
 * support for multiline code input
